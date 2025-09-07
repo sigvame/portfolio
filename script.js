@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             project2_title: 'Online Store',
             project2_text_1: 'A team project for an online store. The project was created using Python (Backend) and the Django framework.',
             project2_text_2: 'The \'Online Store\' project is a fully functional online store with a database for users and products.',
-            project2_text_3: 'Functionality:<br> --> Product purchases | Account registration | Delivery options | Card payment | Reviews and comments| And much more',
+            project2_text_3: 'Functionality:<br> --> Product purchases | Account registration | Delivery options | Card payment | Reviews and comments | And much more',
             skills_title: 'Skills',
             skill1_title: 'C++ / Python',
             skill1_text: 'Advanced level (C++, Django Framework, Python)',
@@ -298,3 +298,4 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 
 });
+
