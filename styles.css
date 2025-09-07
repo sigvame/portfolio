@@ -688,3 +688,9 @@ textarea {
         margin-bottom: 1rem;
     }
 }
+
+
+/* Делаем "фантомными" элементы, чтобы они не занимали место на странице */
+.hidden-form-group {
+    display: none;
+}
