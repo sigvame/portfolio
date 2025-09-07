@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Artem Zheleznov</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="light-theme">
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="nav-logo">Artem Zheleznov</a>
+    
+            <div class="nav-links-container" id="nav-links-container">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link" data-lang-key="nav_about">Обо мне</a>
+                    <a href="#projects" class="nav-link" data-lang-key="nav_projects">Проекты</a>
+                    <a href="#skills" class="nav-link" data-lang-key="nav_skills">Навыки</a>
+                    <a href="#achievements" class="nav-link" data-lang-key="nav_achievements">Достижения</a>
+                    <a href="#contact" class="nav-link" data-lang-key="nav_contact">Контакты</a>
+                </div>
+                <div class="nav-socials">
+                    <a href="https://github.com/sigvame" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/username" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kaiseloff?igsh=cjdtcGhjdzgzOXB2" target="_blank"
+                        aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/kaiseloff" target="_blank" aria-label="Telegram"><i
+                            class="fab fa-telegram-plane"></i></a>
+                </div>
+
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="ru">RU</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="pl">PL</button>
+                </div>
+            </div>
+    
+            <div class="nav-buttons-right">
+                
+                <button id="menu-toggle" class="menu-toggle" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <img src="img/my-photo.jpg" alt="Мое фото" class="profile-img">
+                </div>
+
+                <div class="hero-text">
+                    <h1>Artem Zheleznov</h1>
+                    <p class="specialty" data-lang-key="hero_specialty">Разработчик C++ | <b>E-Commerse</b> | Frontend &
+                        Backend</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" data-lang-key="hero_projects_btn">Мои проекты</a>
+                        <a href="#contact" class="btn btn-secondary" data-lang-key="hero_contact_btn">Связаться со
+                            мной</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-header">
+                <i class="fas fa-user-circle section-icon"></i>
+                <h2 data-lang-key="about_title">Обо мне</h2>
+            </div>
+            <div class="about-content">
+                <p data-lang-key="about_text">какая то инфа про меня сюда</p>
+                <ul class="about-list">
+                    <li data-lang-key="about_skill_1"><i class="fas fa-code"></i> Навыки работы C++, Python и JavaScript
+                    </li>
+                    <li data-lang-key="about_skill_2"><i class="fas fa-database"></i> Работа с базами данных (MSSQL) и
+                        навыки работы с Django</li>
+                    <li data-lang-key="about_skill_3"><i class="fas fa-lightbulb"></i> И сюда чето
+                        -----------------------------------------</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section dark-section">
+            <div class="section-header">
+                <i class="fas fa-project-diagram section-icon"></i>
+                <h2 data-lang-key="projects_title">Проекты</h2>
+            </div>
+
+            <div class="projects-container">
+                <div class="project-card">
+                    <img src="img/прграмма для экзамена.png" alt="Проект 1">
+                    <div class="project-info">
+                        <h3 data-lang-key="project1_title">Программа для тестирования студентов</h3>
+                        <p data-lang-key="project1_text">Участвовал в командном проекте во время учебы в компьютерной
+                            академии IT Step. Суть проекта в создании программы для тестирования студентов.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/username/project1" target="_blank" class="project-link"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/online-store.jpg" alt="Проект 2">
+                    <div class="project-info">
+                        <h3 data-lang-key="project2_title">Интернет магазин</h3>
+                        <p data-lang-key="project2_text_1">Командный проект Интернет магазин. Для создания проекта
+                            использовались Python (Backend) и фреймворк Django.</p>
+                        <p data-lang-key="project2_text_2">Проект 'Интернет магазин' - это полный рабочий интернет
+                            магазин с базой данных для пользователей и товаров. </p>
+                        <p data-lang-key="project2_text_3">Функционал:<br> --> Покупки товаров<span
+                                style="margin-left: 90px;"> --> Регистрация аккаунтов</span><br> --> Возможность
+                            доставки<span style="margin-left: 48px;"> --> Оплата картой</span><br> --> Отзывы и
+                            комментарии<span style="margin-left: 43px;"> --> Многое другое</span></p>
+                        <div class="project-links">
+                            <a href="https://github.com/username/project2" target="_blank" class="project-link"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="section-header">
+                <i class="fas fa-tools section-icon"></i>
+                <h2 data-lang-key="skills_title">Навыки</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <div class="skill-content">
+                        <h4 data-lang-key="skill1_title">C++ / Python</h4>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar csharp" style="width: 90%;"></div>
+                        </div>
+                        <p data-lang-key="skill1_text">Продвинутый уровень (C++, Django Framework, Python)</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-content">
+                        <h4 data-lang-key="skill2_title">Frontend</h4>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar csharp" style="width: 90%;"></div>
+                        </div>
+                        <p data-lang-key="skill2_text">Продвинутый уровень (HTML, CSS, JavaScript, базовый React)</p>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-content">
+                        <h4 data-lang-key="skill3_title">Базы данных</h4>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar databases" style="width: 75%;"></div>
+                        </div>
+                        <p data-lang-key="skill3_text">Средний уровень (MSSQL, проектирование БД)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="section dark-section">
+            <div class="section-header">
+                <i class="fas fa-award section-icon"></i>
+                <h2 data-lang-key="achievements_title">Достижения</h2>
+            </div>
+            <div class="achievements-container">
+                <div class="achievement">
+                    <img src="img/achievement1.png" alt="Сертификат IT Step">
+                    <p data-lang-key="achievement1_title">Сертификат IT Step</p>
+                </div>
+                <div class="achievement">
+                    <img src="img/achievement2.png" alt="чета">
+                    <p data-lang-key="achievement2_title">Чета</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-header">
+                <i class="fas fa-envelope section-icon"></i>
+                <h2 data-lang-key="contact_title">Связаться со мной</h2>
+            </div>
+            <div class="contact-content">
+                <form id="contact-form" class="contact-form">
+                    <p data-lang-key="contact_form_text">Оставьте свое сообщение, и я свяжусь с вами в ближайшее время!
+                    </p>
+                    <div class="form-group">
+                        <label for="name" data-lang-key="form_name">Имя:</label>
+                        <input type="text" id="name" data-lang-key="form_name_placeholder" placeholder="Ваше имя"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang-key="form_email">Email:</label>
+                        <input type="email" id="email" data-lang-key="form_email_placeholder" placeholder="Ваш email"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-lang-key="form_message">Сообщение:</label>
+                        <textarea id="message" data-lang-key="form_message_placeholder" placeholder="Ваше сообщение..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-lang-key="form_submit_btn">Отправить
+                        сообщение</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+
+                <div class="contact-info">
+                    <h3 data-lang-key="contact_info_title">Мои контакты</h3>
+                    <ul>
+                        <li data-lang-key="contact_email"><i class="fas fa-envelope"></i> <a
+                                href="mailto:artemzheleznovjob@gmail.com">artemzheleznovjob@gmail.com</a></li>
+                        <li data-lang-key="contact_phone"><i class="fas fa-phone-alt"></i> <a
+                                href="tel:+48790592145">+48 790 592 145</a></li>
+                        <li><i class="fab fa-github"></i> <a href="https://github.com/sigvame"
+                                target="_blank">github.com/sigvame</a></li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/username"
+                                target="_blank">linkedin.com/in/username</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p data-lang-key="footer_text">&copy; 2025 Artem Zheleznov. Все права защищены.</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init({
+             publicKey: "RoSzvsJOAi10dED-C",
+           });
+        })();
+     </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
