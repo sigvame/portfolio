@@ -63,18 +63,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const serviceID = 'service_qavey9l';
             const templateID = 'template_zuxtxal';
 
+            const fullMessage = `Письмо от ${formData.name} (${formData.email})\n\n${formData.message}`;
+
             // Отправляем данные с помощью EmailJS
             emailjs.send(serviceID, templateID, {
-                    from_name: formData.name,
-                    reply_to: formData.email,
-                    message: formData.message,
-                })
+                from_name: formData.name,
+                reply_to: formData.email,
+                message: fullMessage, 
+            })
                 .then(
                     () => {
                         // В случае успеха
                         formStatus.textContent = 'Сообщение успешно отправлено.';
-                        formStatus.style.color = '#28a745'; // Зеленый цвет
-                        contactForm.reset(); // Очищаем форму
+                        formStatus.style.color = '#28a745';
+                        contactForm.reset();
                     },
                     (error) => {
                         // В случае ошибки
