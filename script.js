@@ -40,61 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Обработка формы контактов (без изменений)
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Показываем сообщение о начале отправки
-            formStatus.textContent = 'Отправка...';
-            formStatus.style.color = '#007bff'; // Синий цвет для ожидания
-
-            // Собираем данные формы
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                message: document.getElementById('message').value
-            };
-
-            // Здесь вы вставляете свои реальные ключи из EmailJS
-            const serviceID = 'service_qavey9l';
-            const templateID = 'template_zuxtxal';
-
-            const fullMessage = `Письмо от ${formData.name} (${formData.email})\n\n${formData.message}`;
-
-            // Отправляем данные с помощью EmailJS
-            emailjs.send(serviceID, templateID, {
-                from_name: formData.name,
-                reply_to: formData.email,
-                message: fullMessage, 
-            })
-                .then(
-                    () => {
-                        // В случае успеха
-                        formStatus.textContent = 'Сообщение успешно отправлено.';
-                        formStatus.style.color = '#28a745';
-                        contactForm.reset();
-                    },
-                    (error) => {
-                        // В случае ошибки
-                        formStatus.textContent = 'Ошибка отправки. Пожалуйста, попробуйте позже.';
-                        formStatus.style.color = '#dc3545'; // Красный цвет
-                        console.error('FAILED...', error);
-                    }
-                )
-                .finally(() => {
-                    // Убираем сообщение через 5 секунд в любом случае
-                    setTimeout(() => {
-                        formStatus.textContent = '';
-                    }, 5000);
-                });
-        });
-    }
-
-    // 4. Логика для бургер-меню (без изменений)
+    // 3. Логика для бургер-меню (без изменений)
     const menuToggleBtn = document.getElementById('menu-toggle');
     const navLinksContainer = document.getElementById('nav-links-container');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -120,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Логика для переключения языка
+    // 4. Логика для переключения языка (без изменений)
     const translations = {
         ru: {
             nav_about: 'Обо мне',
@@ -154,18 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
             achievement1_title: 'Сертификат IT Step',
             achievement2_title: 'Чета',
             contact_title: 'Связаться со мной',
-            contact_form_text: 'Оставьте свое сообщение, и я свяжусь с вами в ближайшее время!',
-            form_name: 'Имя:',
-            form_name_placeholder: 'Ваше имя',
-            form_email: 'Email:',
-            form_email_placeholder: 'Ваш email',
-            form_message: 'Сообщение:',
-            form_message_placeholder: 'Ваше сообщение...',
-            form_submit_btn: 'Отправить сообщение',
             contact_info_title: 'Мои контакты',
             contact_email: 'artemzheleznovjob@gmail.com',
             contact_phone: '+48 790 592 145',
-            footer_text: '&copy; 2025 Artem Zheleznov. Все права защищены.'
+            footer_text: '&copy; 2025 Artem Zheleznov. Все права защищены.',
+            copy: 'Скопировано в буфер обмена.'
         },
         en: {
             nav_about: 'About',
@@ -199,18 +138,11 @@ document.addEventListener('DOMContentLoaded', () => {
             achievement1_title: 'IT Step Certificate',
             achievement2_title: 'Something',
             contact_title: 'Contact Me',
-            contact_form_text: 'Leave your message and I will get back to you shortly!',
-            form_name: 'Name:',
-            form_name_placeholder: 'Your name',
-            form_email: 'Email:',
-            form_email_placeholder: 'Your email',
-            form_message: 'Message:',
-            form_message_placeholder: 'Your message...',
-            form_submit_btn: 'Send Message',
             contact_info_title: 'My Contacts',
             contact_email: 'artemzheleznovjob@gmail.com',
             contact_phone: '+48 790 592 145',
-            footer_text: '&copy; 2025 Artem Zheleznov. All rights reserved.'
+            footer_text: '&copy; 2025 Artem Zheleznov. All rights reserved.',
+            copy: 'Copied to clipboard.'
         },
         pl: {
             nav_about: 'O mnie',
@@ -244,24 +176,18 @@ document.addEventListener('DOMContentLoaded', () => {
             achievement1_title: 'Certyfikat IT Step',
             achievement2_title: 'Coś',
             contact_title: 'Skontaktuj się ze mną',
-            contact_form_text: 'Zostaw wiadomość, a skontaktuję się z Tobą wkrótce!',
-            form_name: 'Imię:',
-            form_name_placeholder: 'Twoje imię',
-            form_email: 'Email:',
-            form_email_placeholder: 'Twój email',
-            form_message: 'Wiadomość:',
-            form_message_placeholder: 'Twoja wiadomość...',
-            form_submit_btn: 'Wyślij wiadomość',
             contact_info_title: 'Moje kontakty',
             contact_email: 'artemzheleznovjob@gmail.com',
             contact_phone: '+48 790 592 145',
-            footer_text: '&copy; 2025 Artem Zheleznov. Wszelkie prawa zastrzeżone.'
+            footer_text: '&copy; 2025 Artem Zheleznov. Wszelkie prawa zastrzeżone.',
+            copy: 'Skopiowano do schowka.'
         }
     };
 
     const langButtons = document.querySelectorAll('.lang-btn');
     const elementsToTranslate = document.querySelectorAll('[data-lang-key]');
 
+    // Inside your setLanguage(lang) function
     function setLanguage(lang) {
         document.documentElement.lang = lang;
         elementsToTranslate.forEach(element => {
@@ -269,6 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (translations[lang] && translations[lang][key]) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translations[lang][key];
+                } else if (element.classList.contains('toast-text')) { // Add this check
+                    element.textContent = translations[lang][key];
                 } else {
                     element.innerHTML = translations[lang][key];
                 }
@@ -297,4 +225,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('selectedLang') || 'ru';
     setLanguage(savedLang);
 
+    // Логика для копирования (новая)
+    const interactiveItems = document.querySelectorAll('.contact-item-interactive');
+    const toast = document.getElementById('copy-success-toast');
+
+    interactiveItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const textToCopy = item.getAttribute('data-contact-value');
+            
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => {
+                    showToast();
+                })
+                .catch(err => {
+                    console.error('Не удалось скопировать текст: ', err);
+                });
+        });
+    });
+
+    function showToast() {
+        toast.style.display = 'block';
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 3000);
+    }
 });
