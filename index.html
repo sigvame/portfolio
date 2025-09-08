@@ -191,41 +191,58 @@
                 <h2 data-lang-key="contact_title">Связаться со мной</h2>
             </div>
             <div class="contact-content">
-                <form id="contact-form" class="contact-form">
-                    <p data-lang-key="contact_form_text">Оставьте свое сообщение, и я свяжусь с вами в ближайшее время!</p>
                 
-                    <div class="form-group">
-                        <label for="name" data-lang-key="form_name">Имя:</label>
-                        <input type="text" id="name" data-lang-key="form_name_placeholder" placeholder="Ваше имя" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" data-lang-key="form_email">Email:</label>
-                        <input type="email" id="email" data-lang-key="form_email_placeholder" placeholder="Ваш email" required>
-                    </div>
-                
-                    <div class="form-group">
-                        <label for="message" data-lang-key="form_message">Сообщение:</label>
-                        <textarea id="message" data-lang-key="form_message_placeholder" placeholder="Ваше сообщение..."
-                            required></textarea>
-                    </div>
-                
-                    <button type="submit" class="btn btn-primary" data-lang-key="form_submit_btn">Отправить сообщение</button>
-                    <div id="form-status" class="form-status"></div>         
-                </form>
 
-                <div class="contact-info">
-                    <h3 data-lang-key="contact_info_title">Мои контакты</h3>
-                    <ul>
-                        <li data-lang-key="contact_email"><i class="fas fa-envelope"></i> <a
-                                href="mailto:artemzheleznovjob@gmail.com">artemzheleznovjob@gmail.com</a></li>
-                        <li data-lang-key="contact_phone"><i class="fas fa-phone-alt"></i> <a
-                                href="tel:+48790592145">+48 790 592 145</a></li>
-                        <li><i class="fab fa-github"></i> <a href="https://github.com/sigvame"
-                                target="_blank">github.com/sigvame</a></li>
-                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/username"
-                                target="_blank">linkedin.com/in/username</a></li>
-                    </ul>
+                <div class="contact-card">
+                    <h3 class="contact-title" data-lang-key="contact_info_title">Мои контакты</h3>
+                    <div class="contact-items">
+                
+                        <div class="contact-item contact-item-interactive" data-contact-value="artemzheleznovjob@gmail.com">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label" data-lang-key="contact_email">Email</span>
+                                <span class="contact-value">artemzheleznovjob@gmail.com</span>
+                            </div>
+                        </div>
+                
+                        <div class="contact-item contact-item-interactive" data-contact-value="+48790592145">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label" data-lang-key="contact_phone">Телефон</span>
+                                <span class="contact-value">+48 790 592 145</span>
+                            </div>
+                        </div>
+                
+                        <a href="https://github.com/sigvame" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">sigvame</span>
+                            </div>
+                        </a>
+                
+                        <a href="https://www.linkedin.com/in/username" target="_blank" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <span class="contact-value">in/username</span>
+                            </div>
+                        </a>
+                
+                    </div>
                 </div>
+                
+                <div id="copy-success-toast" class="copy-success-toast">
+                    <i class="fas fa-check-circle"></i>
+                    <span class="toast-text" data-lang-key="copy"></span></div>
             </div>
         </section>
     </main>
@@ -234,14 +251,7 @@
         <p data-lang-key="footer_text">&copy; 2025 Artem Zheleznov. Все права защищены.</p>
     </footer>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-           emailjs.init({
-             publicKey: "RoSzvsJOAi10dED-C",
-           });
-        })();
-     </script>
+    
 
     <script src="script.js"></script>
 </body>
