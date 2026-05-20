@@ -63,8 +63,7 @@
 
                 <div class="hero-text">
                     <h1>Artem Zheleznov</h1>
-                    <p class="specialty" data-lang-key="hero_specialty">Пока что ничего | <b>E-Commerse</b> | Frontend &
-                        Backend</p>
+                    <p class="specialty" data-lang-key="hero_specialty"></p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary" data-lang-key="hero_projects_btn">Мои проекты</a>
                         <a href="#contact" class="btn btn-secondary" data-lang-key="hero_contact_btn">Связаться со
@@ -80,15 +79,19 @@
                 <h2 data-lang-key="about_title">Обо мне</h2>
             </div>
             <div class="about-content">
-                <p data-lang-key="about_text">какая то инфа про меня сюда</p>
-                <ul class="about-list">
-                    <li data-lang-key="about_skill_1"><i class="fas fa-code"></i> Навыки работы C++, Python и JavaScript
-                    </li>
-                    <li data-lang-key="about_skill_2"><i class="fas fa-database"></i> Работа с базами данных (MSSQL) и
-                        навыки работы с Django</li>
-                    <li data-lang-key="about_skill_3"><i class="fas fa-lightbulb"></i> И сюда чето
-                        -----------------------------------------</li>
-                </ul>
+                <p data-lang-key="about_text"></p>
+                
+                <!-- Сетка для компактных карточек-квадратов -->
+                <div class="about-grid">
+                    <div class="about-card" data-lang-key="about_skill_1">
+                    </div>
+                    <div class="about-card" data-lang-key="about_skill_2">
+                        <!-- Вторая карточка -->
+                    </div>
+                    <div class="about-card" data-lang-key="about_skill_3">
+                        <!-- Третья карточка -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -108,7 +111,6 @@
                         <div class="project-links">
                             <a href="https://github.com/SerhiiRudenok/OnlineStore" target="_blank" class="project-link"><i
                                     class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="project-link disabled"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +127,6 @@
                         <div class="project-links">
                             <a href="https://github.com/username/project2" target="_blank" class="project-link"><i
                                     class="fab fa-github"></i> GitHub</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -216,16 +217,16 @@
                                 <span class="contact-value">+48 790 592 145</span>
                             </div>
                         </div>
-                
-                        <a href="https://github.com/sigvame" target="_blank" class="contact-item">
+
+                        <div class="contact-item contact-item-interactive" data-contact-value="+380635388587">
                             <div class="contact-icon">
-                                <i class="fab fa-github"></i>
+                                <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-details">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-value">sigvame</span>
+                                <span class="contact-label" data-lang-key="contact_phone2">Телефон</span>
+                                <span class="contact-value">+380 63 538 85 87</span>
                             </div>
-                        </a>
+                        </div>
                 
                         <a href="https://www.linkedin.com/in/username" target="_blank" class="contact-item">
                             <div class="contact-icon">
@@ -236,7 +237,6 @@
                                 <span class="contact-value">in/username</span>
                             </div>
                         </a>
-                
                     </div>
                 </div>
                 
