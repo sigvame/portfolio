@@ -752,7 +752,6 @@ textarea {
 
 
 
-/* Новые стили для контактной карточки */
 /* Базовые стили для секции (родительский контейнер) */
 #contact.section {
     width: 100%;
@@ -760,7 +759,6 @@ textarea {
     padding: 60px 0;
     box-sizing: border-box;
     overflow: hidden;
-    /* Обрезаем всё, что пытается вылезти за экран */
 }
 
 /* Шапка секции тоже должна быть строго по центру */
@@ -827,6 +825,16 @@ textarea {
     /* Защита геометрии */
     width: 100%;
     box-sizing: border-box;
+}
+
+.contact-item .contact-icon i {
+    color: var(--primary-color, #007bff);
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
 }
 
 /* Детали внутри элемента */
