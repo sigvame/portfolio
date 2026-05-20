@@ -267,33 +267,84 @@ body {
 .about-content {
     text-align: center;
     font-size: 1.1rem;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-.about-list {
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+    padding: 0 1rem;
+}
+/* Стили самой карточки-квадрата */
+.about-card {
+    background-color: var(--border-color, #f4f4f4);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Эффект при наведении на карточку */
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилизация заголовка (Текст "Образование", который идет до списка) */
+.about-card {
+    font-weight: 600;
+    color: var(--text-color, #333);
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Стилизация списка, который прилетает из JS скрипта */
+.about-card ul {
     list-style: none;
     padding: 0;
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-}
+    margin: 1rem 0 0 0;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--text-muted, #a9a9a9);
 
-.about-list li {
-    background-color: var(--border-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 0.75rem;
-    transition: background-color 0.3s ease;
+    /* Расстояние между пунктами обучения */
 }
 
-body.dark-theme .about-list li {
-    background-color: #2a2a2a;
+/* Элементы списка (ваши учебные заведения) */
+.about-card ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    line-height: 1.4;
+    color: var(--text-muted, #393636);
 }
+
+/* Красивый кастомный маркер вместо стандартной точки */
+.about-card ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color, #003670);
+    font-weight: bold;
+}
+
+body.dark-theme .about-card ul li {
+    color: var(--text-muted, #c4c4c4);
+}
+
+
 
 /* Стили для проектов */
 .projects-container {
