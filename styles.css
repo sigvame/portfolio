@@ -753,27 +753,65 @@ textarea {
 
 
 /* Новые стили для контактной карточки */
+/* Базовые стили для секции (родительский контейнер) */
+#contact.section {
+    width: 100%;
+    max-width: 100%;
+    padding: 60px 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Обрезаем всё, что пытается вылезти за экран */
+}
+
+/* Шапка секции тоже должна быть строго по центру */
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* Контейнер, который автоматически центрирует карточку на любом экране */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    /* Защитные поля на мобилках */
+    box-sizing: border-box;
+}
+
+/* Сама карточка: теперь она полностью резиновая */
 .contact-card {
     background-color: var(--card-background);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     box-shadow: 0 4px 15px var(--shadow-light);
     border: 1px solid var(--border-color);
+
+    /* Авто-подстройка: */
+    width: 100%;
+    max-width: 480px;
+    /* Максимальная ширина на ПК, на мобильных сожмется до 100% */
+    box-sizing: border-box;
+    /* Включает паддинги в общую ширину */
 }
 
 .contact-title {
     color: var(--heading-color);
     text-align: center;
     margin-bottom: 25px;
-    font-size: 1.8em;
+    font-size: 1.6rem;
 }
 
 .contact-items {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 100%;
 }
 
+/* Элементы внутри карточки */
 .contact-item {
     display: flex;
     align-items: center;
@@ -785,89 +823,49 @@ textarea {
     text-decoration: none;
     color: var(--text-color);
     border: 1px solid var(--border-color);
+
+    /* Защита геометрии */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.contact-item-interactive {
-    cursor: pointer;
-}
-
-.contact-item:hover {
-    background-color: var(--border-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px var(--shadow-light);
-}
-
-.contact-icon {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    min-width: 30px;
-    text-align: center;
-}
-
+/* Детали внутри элемента */
 .contact-details {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    /* Не дает тексту растягивать родителя */
+    width: 100%;
 }
 
 .contact-label {
-    font-size: 0.9em;
-    color: var(--secondary-color);
+    font-size: 0.85rem;
+    opacity: 0.7;
 }
 
+/* Ломаем длинный email, если экран телефона совсем крошечный */
 .contact-value {
-    font-size: 1.1em;
-    font-weight: bold;
+    font-size: 1rem;
+    word-break: break-all;
+    white-space: normal;
 }
 
-/* Адаптивные стили для мобильных экранов */
-@media (max-width: 768px) {
-
-    /* 1. Центрируем родительский контент секции */
-    .contact-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 0 15px;
-        /* Защитные отступы от краев экрана телефона */
-        box-sizing: border-box;
-    }
-
-    /* 2. Ограничиваем карточку, центрируем её маргинами и убираем микро-сдвиги */
+/* Микро-адаптация для очень маленьких экранов (меньше 400px) */
+@media (max-width: 400px) {
     .contact-card {
-        width: 100%;
-        max-width: 400px;
-        /* Чтобы карточка не была слишком огромной на планшетах */
-        margin: 0 auto;
-        /* Идеальное выравнивание по центру */
-        padding: 1.5rem;
-        /* Чуть уменьшаем внутренние отступы для экономии места */
-        box-sizing: border-box;
+        padding: 1.5rem 1rem;
+        /* Уменьшаем отступы, чтобы дать тексту больше места */
     }
 
-    /* 3. Делаем заголовки чуть компактнее для мобильных, чтобы не ломали верстку */
     .contact-title {
-        font-size: 1.4em;
-        margin-bottom: 20px;
-    }
-
-    .contact-item {
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .contact-details {
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+        font-size: 1.3rem;
     }
 
     .contact-value {
-        word-break: break-all;
         font-size: 0.9rem;
+        /* Чуть уменьшаем шрифт, чтобы email реже переносился */
     }
 }
-
 /* Стили для всплывающего уведомления */
 .copy-success-toast {
     position: fixed;
