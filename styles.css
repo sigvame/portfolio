@@ -819,6 +819,55 @@ textarea {
     font-weight: bold;
 }
 
+/* Адаптивные стили для мобильных экранов */
+@media (max-width: 768px) {
+
+    /* 1. Центрируем родительский контент секции */
+    .contact-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 15px;
+        /* Защитные отступы от краев экрана телефона */
+        box-sizing: border-box;
+    }
+
+    /* 2. Ограничиваем карточку, центрируем её маргинами и убираем микро-сдвиги */
+    .contact-card {
+        width: 100%;
+        max-width: 400px;
+        /* Чтобы карточка не была слишком огромной на планшетах */
+        margin: 0 auto;
+        /* Идеальное выравнивание по центру */
+        padding: 1.5rem;
+        /* Чуть уменьшаем внутренние отступы для экономии места */
+        box-sizing: border-box;
+    }
+
+    /* 3. Делаем заголовки чуть компактнее для мобильных, чтобы не ломали верстку */
+    .contact-title {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .contact-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-details {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-value {
+        word-break: break-all;
+        font-size: 0.9rem;
+    }
+}
+
 /* Стили для всплывающего уведомления */
 .copy-success-toast {
     position: fixed;
